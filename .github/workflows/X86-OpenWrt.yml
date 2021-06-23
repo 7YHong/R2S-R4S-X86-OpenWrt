@@ -114,9 +114,10 @@ jobs:
     - name: Organize files
       id: organize
       run: |
+        ls -AhR openwrt/bin/targets
         rm -rf ./artifact/
         mkdir -p ./artifact/
-        mv openwrt/bin/targets/x86/64/*combined.img* ./artifact/
+        mv openwrt/bin/targets/x86/64/* ./artifact/
         cd ./artifact/
         ls -Ahl
         gzip -d *.gz && exit 0
